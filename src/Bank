@@ -1,0 +1,6 @@
+// this is the banking class
+import java.util.ArrayList;
+public class Bank{
+   private ArrayList<Transaction> transactions = new ArrayList<>();
+   private ArrayList<Account> accounts = new ArrayList<>();
+   private ArrayList<Customer> customers=new ArrayList<>();
