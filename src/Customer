@@ -1,0 +1,33 @@
+class Customer{
+   private int customerId;
+   private String fullName;       
+   private String email;
+  
+  public Customer(int customerId,String fullName,String email){
+  // initialization      
+      this.customerId=customerId;
+      this.fullName=fullName;        
+      this.email=email;        
+                 }
+
+ //getter and setter methods for private variables
+  public void  setCustomerName(String customerName){
+       this.fullName=customerName;
+                  }
+  public String getCustomerName(){
+            return fullName;
+                  }
+ 
+  public void setCustomerId(int numId){
+           this.customerId= numId;
+                    }
+  public int getCustomerId(){
+            return customerId;
+                     } 
+   public void setCustomerEmail(String customerEmail){
+            this.email=customerEmail;
+                     }
+   public String getCustomerEmail(){
+            return email;
+                    }
+         }
