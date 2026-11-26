@@ -4,3 +4,50 @@ public class Bank{
    private ArrayList<Transaction> transactions = new ArrayList<>();
    private ArrayList<Account> accounts = new ArrayList<>();
    private ArrayList<Customer> customers=new ArrayList<>();
+
+// methods that add instance objects to their respective array lists.
+   public void addAccount(Account bankAccount ){
+         accounts.add(bankAccount);
+                   }
+   public Account findAccount(int accountNumber){
+        int i=0;
+      
+      while(i <accounts.size()){
+             Account currentAccount = accounts.get(i);
+             if(currentAccount.getAccountNumber() ==accountNumber){
+                  return currentAccount;
+                         }
+                    i++;
+           }     
+   return null;
+}
+
+   public void addCustomer(Customer customer){
+      customers.add(customer);
+          }
+   public void addTransaction(Transaction transaction){
+       transactions.add(transaction);
+          }
+ 
+   public Customer findCustomer(int customerId){
+      int i=0;
+     while(i< customers.size()){
+      Customer client= customers.get(i);
+     if(client.getCustomerId()== customerId){
+          return client;
+                 }
+             i++;  
+              }  
+        return null;
+     }     
+   public Transaction findTransaction(int transactionId){
+          int i=0;
+       while(i< transactions.size()){
+          Transaction exchange= transactions.get(i);
+          if(exchange.getTransactionId()== transactionId){
+            return exchange;
+                      }
+                i++;
+              }
+           return null;
+    }    
