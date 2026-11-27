@@ -70,4 +70,142 @@ public class Bank{
            }
     System.out.println("no accounts matching this customer have been found");
           return null;  
-     } 
+   import java.util.ArrayList;
+
+public class Bank {
+
+    private ArrayList<Transaction> transactions = new ArrayList<>();
+    private ArrayList<Account> accounts = new ArrayList<>();
+    private ArrayList<Customer> customers = new ArrayList<>();
+
+    // Add an account
+    public void addAccount(Account bankAccount) {
+        accounts.add(bankAccount);
+    }
+
+    // Find account by account number
+    public Account findAccount(int accountNumber) {
+        int i = 0;
+
+        while (i < accounts.size()) {
+            Account currentAccount = accounts.get(i);
+
+            if (currentAccount.getAccountNumber() == accountNumber) {
+                return currentAccount;
+            }
+
+            i++;
+        }
+
+        return null;
+    }
+
+    // Add a customer
+    public void addCustomer(Customer customer) {
+        customers.add(customer);
+    }
+
+    // Find customer by customer ID
+    public Customer findCustomer(int customerId) {
+        int i = 0;
+
+        while (i < customers.size()) {
+            Customer client = customers.get(i);
+
+            if (client.getCustomerId() == customerId) {
+                return client;
+            }
+
+            i++;
+        }
+
+        return null;
+    }
+
+    // Add a transaction
+    public void addTransaction(Transaction transaction) {
+        transactions.add(transaction);
+    }
+
+    // Find transaction by transaction ID
+    public Transaction findTransaction(int transactionId) {
+        int i = 0;
+
+        while (i < transactions.size()) {
+            Transaction exchange = transactions.get(i);
+
+            if (exchange.getTransactionId() == transactionId) {
+                return exchange;
+            }
+
+            i++;
+        }
+
+        return null;
+    }
+
+    // Find the first account belonging to a customer
+    public Account findAccountByCustomer(int customerId) {
+        Customer client = findCustomer(customerId);
+
+        if (client == null) {
+            return null;
+        }
+
+        int j = 0;
+
+        while (j < accounts.size()) {
+            Account someAcc = accounts.get(j);
+
+            if (someAcc.getAccountHolder() == client) {
+                return someAcc;
+            }
+
+            j++;
+        }
+
+        return null;
+    }
+
+    // Find all accounts belonging to a customer
+    public ArrayList<Account> findAccountsByCustomer(int customerId) {
+        Customer client = findCustomer(customerId);
+
+        ArrayList<Account> customerAccounts = new ArrayList<>();
+
+        if (client == null) {
+            return customerAccounts;
+        }
+
+        int j = 0;
+
+        while (j < accounts.size()) {
+            Account someAcc = accounts.get(j);
+
+            if (someAcc.getAccountHolder() == client) {
+                customerAccounts.add(someAcc);
+            }
+
+            j++;
+        }
+
+        return customerAccounts;
+    }
+
+    // Get total number of accounts
+    public int getAccountCount() {
+        return accounts.size();
+    }
+
+    // Get total number of customers
+    public int getCustomerCount() {
+        return customers.size();
+    }
+
+    // Get total number of transactions
+    public int getTransactionCount() {
+        return transactions.size();
+    }
+}  
+         } 
+      }
